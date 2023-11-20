@@ -1,0 +1,28 @@
+<div class="flex flex-col justify-start items-center max-w-4 mt-1 text-5xl px-20" *ngIf="!isConfirmed">
+    <form [formGroup]="feedbackForm" (ngSubmit)="onSendQuestionnaire()">
+        <div class="flex flex-col justify-start items-center max-w-4 text-5xl px-20 gap-5">
+            <p class="text-5xl">What is your occupation?*</p>
+            <div class=" flex flex-col gap-2">
+                <div *ngFor="let job of jobs">
+                    <label class="inline-flex items-center text-2xl">
+                        <input type="radio" name="grade" [value]="job" [formControl]="feedbackForm.controls.job"
+                            class="form-radio text-blue-500 checked:bg-blue-600 checked:border-blue-600 h-5 w-5">
+                        <span class="ml-2 text-4xl">{{job}}</span>
+                    </label>
+                </div>
+            </div>
+            <div class="flex flex-col justify-start items-center max-w-4 text-4xl px-20 gap-2">
+                <p class="text-5xl">What is your age?*</p>
+                <input name="age" id="age" type="number" class="text-black w-1/2"
+                    [formControl]="feedbackForm.controls.age" />
+            </div>
+            <button
+                class="w-1/5 px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                type="submit">Submit</button>
+            <p *ngIf="isInvalid" class="text-sm">*Age must be between 8 and 110, occupation required*</p>
+        </div>
+    </form>
+</div>
+<div class="flex flex-col justify-start items-center max-w-4 mt-1/10 text-4xl px-20">
+    <app-confirm-feedback *ngIf="isConfirmed"></app-confirm-feedback>
+</div>

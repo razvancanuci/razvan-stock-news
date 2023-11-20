@@ -1,0 +1,8 @@
+<div>
+    <app-unsubscribe-form *ngIf="(!_activeRoute.snapshot.params['id'] || isValidId == false) && isUnSubscribed == false"
+        (unsubscribeEmitter)="onUnsubscribeEmail($event)" [emailInvalid]="emailInvalid"></app-unsubscribe-form>
+    <app-unsubscribe-id *ngIf="_activeRoute.snapshot.params['id'] && isValidId == true && isUnSubscribed == false"
+        [email]="email" [emailInvalid]="emailInvalid" (unsubscribeEmitter)="onUnsubscribeId()">
+    </app-unsubscribe-id>
+    <app-confirm-unsubscribe *ngIf="isUnSubscribed == true"></app-confirm-unsubscribe>
+</div>

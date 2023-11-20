@@ -1,0 +1,21 @@
+<div class="flex flex-col justify-start max-w-4 mt-1/10 text-4xl px-20">
+    <h3 class="text-center">Login to your account:</h3>
+    <form [formGroup]="userForm" (ngSubmit)="login()">
+        <div class="mt-1/40">
+            <label for="username" class="block w-100">Username*: </label>
+            <input
+                class="text-black form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                type="text" id="username" [formControl]="userForm.controls.username" />
+        </div>
+        <div class="mt-1/40">
+            <label for="password" class="block w-100">Password*: </label>
+            <input
+                class="text-black form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                type="password" id="password" [formControl]="userForm.controls.password" />
+        </div>
+        <p *ngIf="loginFail" class="text-sm">*Username or password wrong*</p>
+        <button
+            class="mt-1/20 w-full px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+            type="submit">LogIn</button>
+    </form>
+</div>

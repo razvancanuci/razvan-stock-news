@@ -1,0 +1,30 @@
+<br />
+<div class="flex flex-col items-center max-w-4 mt-1/20 text-4xl px-20">
+    <h3 class="text-center">Subscribers:</h3>
+    <div>
+        <table class="min-w-full text-left font-light">
+            <thead class="border-b font-medium dark:border-neutral-500">
+                <tr>
+                    <th class="px-6 py-4">Name</th>
+                    <th class="px-6 py-4">Email</th>
+                    <th class="px-6 py-4">Phone Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b dark:border-neutral-500" *ngFor="let subscriber of subscribers">
+                    <td class="whitespace-nowrap px-6 py-4">{{subscriber.name}}</td>
+                    <td class="whitespace-nowrap px-6 py-4">{{subscriber.email}}</td>
+                    <td class="whitespace-nowrap px-6 py-4">{{subscriber.phoneNumber}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="flex flex-row gap-3 justify-start items-center">
+        <button
+            class="mt-1/20 w-full px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+            (click)="goToAddUser()">AddUser</button>
+        <button
+            class="mt-1/20 w-full px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+            (click)="goToDeleteUser()">DeleteUser</button>
+    </div>
+</div>
