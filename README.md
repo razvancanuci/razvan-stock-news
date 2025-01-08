@@ -2,4 +2,4 @@
 
 This is the system's diagram: 
 
-![Diagram][resources/diagram.png]
+![Diagram](resources/diagram.png)
